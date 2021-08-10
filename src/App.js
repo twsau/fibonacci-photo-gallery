@@ -3,7 +3,7 @@ import Image from './components/Image';
 
 export default function App() {
   let srcArr = [];
-  let fibNum = fib(9);
+  let fibNum = fib(7);
   fibNum.splice(0, 1);
   fibNum.forEach(num => {
     let src = `https://picsum.photos/${num * 100}`;
