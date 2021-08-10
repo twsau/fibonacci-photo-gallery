@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from '@material-ui/core';
+import Image from './components/Image';
 
-function App() {
+export default function App() {
+  let srcArr = [];
+  let fibNum = fib(9);
+  fibNum.splice(0, 1);
+  fibNum.forEach(num => {
+    let src = `https://picsum.photos/${num * 100}`;
+    srcArr.push(src);
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="fib-container">
+        {srcArr.map((src, index) =>
+          <Image
+            index={index}
+            key={index}
+            src={src}
+          />
+        )}
+      </div>
+      <Button
+        color="primary"
+        href={window.location.href}
+        style={{ marginTop: '5rem' }}
+        variant="contained"
+      >
+        refresh
+      </Button>
+    </>
   );
 }
 
-export default App;
+function fib(n) {
+  if (n === 0) return [0]
+  if (n === 1) return [0, 1]
+  const arr = fib(n - 1)
+  return [...arr, arr[n-1] + arr[n-2]]
+}

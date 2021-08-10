@@ -1,0 +1,94 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  background-color: cadetblue;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fib-container {
+  display: grid;
+  grid-template-areas: 
+    "G F F F I"
+    "G C B E I"
+    "G C A E I"
+    "G D D E I"
+    "H H H H I";  
+}
+
+.item {
+  border: 5px solid cadetblue;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: opacity 1s ease-in-out;
+  &.loading {
+    opacity: 0;
+  }
+  &:hover {
+    
+  }
+  &.n-8 {
+    grid-area: I;
+    max-height: 680px;
+    max-width: 680px;
+    min-height: 680px;
+    min-width: 680px;
+  }
+  &.n-7 {
+    grid-area: H;
+    max-height: 420px;
+    max-width: 420px;
+    min-height: 420px;
+    min-width: 420px;
+  }
+  &.n-6 {
+    grid-area: G;
+    max-height: 260px;
+    max-width: 260px;
+    min-height: 260px;
+    min-width: 260px;
+  }
+  &.n-5 {
+    grid-area: F;
+    max-height: 160px;
+    max-width: 160px;
+    min-height: 160px;
+    min-width: 160px;
+  }
+  &.n-4 {
+    grid-area: E;
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+  }
+  &.n-3 {
+    grid-area: D;
+    max-height: 60px;
+    max-width: 60px;
+    min-height: 60px;
+    min-width: 60px;
+  }
+  &.n-2 {
+    grid-area: C;
+    max-height: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  &.n-1 {
+    grid-area: B;
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+  }
+  &.n-0 {
+    display: none;
+  }
+}
