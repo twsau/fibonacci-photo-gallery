@@ -1,5 +1,4 @@
 html, body, #root {
-  height: 100%;
   margin: 0;
 }
 
@@ -13,12 +12,13 @@ html, body, #root {
 
 .fib-container {
   display: grid;
-  grid-template-areas: 
-    "G F F F I"
-    "G C B E I"
-    "G C A E I"
-    "G D D E I"
-    "H H H H I";  
+  grid-template-areas:
+    "I I I I I"
+    "F E E E H"
+    "F B A D H"
+    "F C C D H"
+    "G G G G H";
+  max-width: 100%;
 }
 
 .item {
